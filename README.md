@@ -6,4 +6,5 @@ The schedule is permanently set for all games as follows:
 
 
 
+
 ![Uploading לוח קטאן עם מספרים.png…]()
