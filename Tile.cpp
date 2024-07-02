@@ -1,4 +1,8 @@
-// Tile.cpp
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
 
 #include "Tile.hpp"
 

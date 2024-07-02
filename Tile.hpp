@@ -1,4 +1,8 @@
-// Tile.hpp
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
 
 #ifndef TILE_HPP
 #define TILE_HPP

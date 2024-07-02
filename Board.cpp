@@ -1,3 +1,10 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
+
 #include "Board.hpp"
 #include "Tile.hpp"
 #include <set> 

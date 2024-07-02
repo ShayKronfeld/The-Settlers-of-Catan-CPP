@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "Building.hpp"
 #include "Player.hpp"  // הוסיפו שורה זו
 
