@@ -3,6 +3,9 @@ Game: The Settlers of Catan CPP
 
 # Overview
 This project implements a simplified version of the popular board game Catan in C++. It includes classes and functionalities to simulate the game mechanics such as building settlements, roads, cities, distributing resources, handling player actions, and implementing development cards.
+
+The game board layout, including resource tiles and their corresponding numbers, is permanently fixed for all games. This ensures consistency across different playthroughs. The game is designed for 3 players, with the player order determined randomly at the start of each game.
+
 The schedule is permanently set for all games as follows:
 
 
@@ -12,7 +15,7 @@ The schedule is permanently set for all games as follows:
 
 ![Uploading לוח קטאן עם מספרים.png…]()
 
-#Files and Structure
+# Files and Structure
 - main.cpp: Entry point of the program. Initializes the game and starts gameplay.
 - Player.hpp, Player.cpp: Defines the Player class, handling player actions and resources.
 - Board.hpp, Board.cpp: Implements the game board, including vertices, edges (roads), and resource distribution.
