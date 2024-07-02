@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "Vertex.hpp"
 
 Vertex::Vertex() : numIndex(0), building(nullptr) {}

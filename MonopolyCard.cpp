@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "MonopolyCard.hpp"
 #include <iostream>
 #include <unordered_map>

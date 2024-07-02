@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #ifndef MONOPOLYCARD_HPP
 #define MONOPOLYCARD_HPP
 

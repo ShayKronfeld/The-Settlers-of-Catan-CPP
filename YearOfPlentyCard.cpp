@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "YearOfPlentyCard.hpp"
 #include "Tile.hpp"
 #include <iostream>

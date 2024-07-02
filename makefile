@@ -1,3 +1,8 @@
+
+# shay kronfeld
+# 322234782
+# kronfeldshay@gmail.com
+
 CXX=clang++
 CXXFLAGS=-std=c++11 -Wall -g
 LDFLAGS=-std=c++11 -Wall -g

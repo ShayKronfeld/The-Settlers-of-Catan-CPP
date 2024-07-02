@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "Settlement.hpp"
 #include "Player.hpp"
 #include "Board.hpp"

@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #pragma once MONOPOLYCARD_HPP
 
 #include "DevelopmentCard.hpp"

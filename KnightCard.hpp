@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #ifndef KNIGHTCARD_HPP
 #define KNIGHTCARD_HPP
 

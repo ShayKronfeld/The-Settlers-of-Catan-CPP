@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include "Katan.hpp"
 #include <iostream>
 #include <cstdlib>

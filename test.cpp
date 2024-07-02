@@ -1,3 +1,9 @@
+/*
+shay kronfeld
+322234782
+kronfeldshay@gmail.com
+*/
+
 #include <iostream>
 #include <cassert>
 #include "Player.hpp"
