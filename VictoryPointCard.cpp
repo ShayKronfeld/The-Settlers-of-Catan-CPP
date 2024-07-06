@@ -9,7 +9,19 @@ kronfeldshay@gmail.com
 
 VictoryPointCard::VictoryPointCard() : DevelopmentCard("VictoryPoint") {}
 
+VictoryPointCard::~VictoryPointCard() {}
+
+VictoryPointCard& VictoryPointCard::operator=(const VictoryPointCard& other) {
+    if (this != &other) { // Self-assignment check
+        // No data members to copy
+    }
+    return *this;
+}
+
 void VictoryPointCard::use(Player* player, const std::vector<Player*>& allPlayers) const {
-    std::cout << "Played VictoryPointCard card. get 1 victory point!" << std::endl;
+    // Display a message indicating the card's effect
+    std::cout << "Played VictoryPointCard. Player " << player->getName() << " gets 1 victory point!" << std::endl;
+    
+    // Increase the player's victory points by 1
     player->addToVictoryPoints(1);
 }

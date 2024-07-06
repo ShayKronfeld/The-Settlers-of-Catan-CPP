@@ -12,6 +12,9 @@ kronfeldshay@gmail.com
 class YearOfPlentyCard : public DevelopmentCard {
 public:
     YearOfPlentyCard(); // Constructor
+    virtual ~YearOfPlentyCard() override; // Destructor
+    YearOfPlentyCard& operator=(const YearOfPlentyCard& other);
+
     void use(Player* player, const std::vector<Player*>& allPlayers) const override; // Override the use method from DevelopmentCard
 };
 

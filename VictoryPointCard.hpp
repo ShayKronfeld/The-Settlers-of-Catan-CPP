@@ -4,17 +4,17 @@ shay kronfeld
 kronfeldshay@gmail.com
 */
 
-#ifndef MONOPOLYCARD_HPP
-#define MONOPOLYCARD_HPP
+#ifndef VICTORYPOINTCARD_HPP
+#define VICTORYPOINTCARD_HPP
 
 #include "DevelopmentCard.hpp"
 
 class VictoryPointCard : public DevelopmentCard {
 public:
     VictoryPointCard(); // Constructor
-
+    virtual ~VictoryPointCard() override; // Destructor
+    VictoryPointCard& operator=(const VictoryPointCard& other);
     void use(Player* player, const std::vector<Player*>& allPlayers) const override; // Override the use method from DevelopmentCard
-    //DevelopmentCard clone() const { return new monopol(*this); }
 };
 
-#endif // MONOPOLYCARD_HPP
+#endif // VICTORYPOINTCARD_HPP

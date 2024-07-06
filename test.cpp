@@ -13,7 +13,7 @@ kronfeldshay@gmail.com
 #include "MonopolyCard.hpp"
 #include "VictoryPointCard.hpp"
 #include "YearOfPlentyCard.hpp"
-#include "Katan.hpp" // Assuming this is where Katan::getInstance() is defined
+#include "Katan.hpp" 
 
 void testPlayerInitialization() {
     Player player("Alice");
@@ -29,6 +29,8 @@ void testPlayerInitialization() {
     assert(resources.at(Resource::IRON) == 0);
     
     assert(player.getDevelopmentCards().empty());
+    std::cout << " "<< std::endl;
+
 }
 
 void testPlayerAddResources() {
@@ -41,6 +43,8 @@ void testPlayerAddResources() {
     assert(resources.at(Resource::SHEEP) == 0);
     assert(resources.at(Resource::WHEAT) == 0);
     assert(resources.at(Resource::IRON) == 0);
+        std::cout << " "<< std::endl;
+
 }
 
 void testPlayerAddDevelopmentCard() {
@@ -62,6 +66,10 @@ void testPlayerAddDevelopmentCard() {
     // Ensure correct types of cards
     assert(dynamic_cast<KnightCard*>(devCards[2]) != nullptr);
     assert(dynamic_cast<RoadBuildingCard*>(devCards[3]) != nullptr);
+        std::cout << " "<< std::endl;
+
+    // delete card1;
+    // delete card2;
 }
 
 void testDevelopmentCardUse() {
@@ -138,6 +146,17 @@ void testDevelopmentCardUse() {
     // Assertions to check road building
     assert(!katan.getBoard().hasRoadOnEdge(1, 4)); // Player can only build a road connected to their own settlement or city.
     assert(!katan.getBoard().hasRoadOnEdge(2, 3)); // Path not found between 2 and 3.
+
+    Katan::resetInstance();
+    // delete card;
+    // delete card2;
+    //     delete card3;
+    // delete card4;
+    // delete card5;
+    // delete card6;
+    // delete card7;
+
+        std::cout << " "<< std::endl;
 }
 
 void testPlayerBuild_Settlement_Roads() {
@@ -149,8 +168,8 @@ void testPlayerBuild_Settlement_Roads() {
     
     player1.buildSettlement(16, katan.getBoard());
     assert(katan.getBoard().hasSettlementOnVertex(16));
-    player1.buildRoad(16, 21, katan.getBoard());
-    assert(katan.getBoard().hasRoadOnEdge(16, 21));
+    player1.buildRoad(16, 11, katan.getBoard());
+    assert(katan.getBoard().hasRoadOnEdge(16, 11));
 
     player2.buildSettlement(16, katan.getBoard()); // Place with another settlement
 
@@ -180,6 +199,10 @@ void testPlayerBuild_Settlement_Roads() {
     assert(player1.getBuildings().size() == 4);
     assert(player2.getBuildings().size() == 0);
     assert(player3.getBuildings().size() == 0);
+
+    Katan::resetInstance();
+    std::cout << " "<< std::endl;
+
 }
 
 
@@ -206,6 +229,9 @@ void testPlayerTrading() {
 
     player1.printResources();
     player2.printResources();
+
+        std::cout << " "<< std::endl;
+
 }
 
 void testVictoryConditions() {
@@ -220,7 +246,11 @@ void testVictoryConditions() {
     assert(!player.hasWon());
     player.addToVictoryPoints(5);  // Assuming winning condition is at 10 points
     assert(player.hasWon());
+
+        std::cout << " "<< std::endl;
+
 }
+
 void testSettlementBuildingAndResourceCollection() {
     Player player1("David");
     Player player2("Emma");
@@ -280,6 +310,10 @@ void testSettlementBuildingAndResourceCollection() {
     assert (player3.getResources().at(Resource::BRICK) == 0);
     assert (player3.getResources().at(Resource::BRICK) == 0);
 
+    Katan::resetInstance();
+
+    //katan.resetBoard();
+    std::cout << " "<< std::endl;
 }
 
 
@@ -289,7 +323,6 @@ void testPlayerBuildCity() {
     Player player3("Charlie");
 
     Katan& katan = Katan::getInstance(player1, player2, player3);
-            std::cout << "new" << std::endl;
 
     player1.addResource(Resource::WHEAT, 2);
     player1.addResource(Resource::IRON, 3);
@@ -297,33 +330,40 @@ void testPlayerBuildCity() {
     // Build initial settlement and road to upgrade later
     player1.buildSettlement(16, katan.getBoard());
     player1.buildRoad(16, 11, katan.getBoard());
+    std::cout << "vertex 16:" << katan.getBoard().hasSettlementOnVertex(16) << " " << std::endl;
 
-    player1.buildSettlement(26, katan.getBoard());
-    player1.buildRoad(26, 21, katan.getBoard());
+
+    player1.buildSettlement(32, katan.getBoard());
+    player1.buildRoad(32, 26, katan.getBoard());
     
     // Attempt to build city at vertex without a settlement
-    // player1.buildCity(19, katan.getBoard());
-    // assert(!katan.getBoard().hasCityOnVertex(19));
+    player1.buildCity(19, katan.getBoard());
+    assert(!katan.getBoard().hasCityOnVertex(19));
     
- std::cout << "Building type at vertex 16 before upgrade: " << 
-    (katan.getBoard().getVertexFromIndex(16).getBuilding() ? 
-    katan.getBoard().getVertexFromIndex(16).getBuilding()->getBuildingTypeName() : "None") << std::endl;
+    player1.buildCity(16, katan.getBoard());
 
-player1.buildCity(16, katan.getBoard());
-
-std::cout << "Building type at vertex 16 after upgrade: " << 
+    std::cout << "Building type at vertex 16 after upgrade: " << 
     (katan.getBoard().getVertexFromIndex(16).getBuilding() ? 
     katan.getBoard().getVertexFromIndex(16).getBuilding()->getBuildingTypeName() : "None") << std::endl;
 
     assert(katan.getBoard().hasCityOnVertex(16));
 
     // Attempt to build city without enough resources
-    player1.buildCity(26, katan.getBoard());
-    assert(!katan.getBoard().hasCityOnVertex(26));
+    player1.buildCity(32, katan.getBoard());
+    assert(!katan.getBoard().hasCityOnVertex(32));
     
     const auto& resources = player1.getResources();
     assert(resources.at(Resource::WHEAT) == 0); // after building
     assert(resources.at(Resource::IRON) == 0);  
+
+    int diceRoll= 10;
+    katan.getBoard().distributeResources(10, player1,player2,player3);
+    player1.printResources();
+
+   // katan.resetBoard();
+    Katan::resetInstance();
+
+    std::cout << " "<< std::endl;
 }
 
 

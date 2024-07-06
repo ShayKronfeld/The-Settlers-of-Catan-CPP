@@ -19,10 +19,19 @@ protected:
     std::string name; // Name of the development card
 
 public:
+    // Constructor to initialize a development card with a given name
     DevelopmentCard(const std::string& name);
+
+    // Virtual destructor to ensure proper cleanup in derived classes
     virtual ~DevelopmentCard();
 
-    virtual void use(Player* player, const std::vector<Player*>& allPlayers) const = 0; // פונקציה וירטואלית טהורה לשימוש בקלף
+    // Assignment operator
+    DevelopmentCard& operator=(const DevelopmentCard& other);
+
+    // Pure virtual function for using the development card, to be implemented in derived classes
+    virtual void use(Player* player, const std::vector<Player*>& allPlayers) const = 0;
+
+    // Getter method to retrieve the name of the development card
     std::string getName() const;
 };
 
